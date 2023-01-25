@@ -1,0 +1,32 @@
+<% obj.each do |recipe| %>
+  <div class="row">
+    <div class="col-md-2">
+      <section class="chef_info center">
+      <%= gravatar_for(recipe.chef, size: 120) %>
+        
+      </section>
+    </div>
+    <div class="col-md-8 well">
+      <h4><%= link_to recipe.name , recipe_path(recipe) %></h4>
+      <p><%= truncate(recipe.description, length: 150) %></p>
+
+      <% if recipe.ingredients.any? %>
+      <p>Ingredients: <%= render recipe.ingredients %></p>
+      <% end %>
+      <p>
+        <span class="quiet"><small>Created 
+
+        <%= time_ago_in_words(recipe.created_at) %> ago by <%= recipe.chef.chefname.capitalize %> 
+                                                            | <%= pluralize(recipe.comments.count, 'Comments') %> </small></span>
+      </p> 
+      <% if logged_in? && (current_chef==recipe.chef || current_chef.admin? )%>
+      <div class="recipe-action">
+            <%= link_to "Edit this recipe" ,edit_recipe_path(recipe), class: "btn btn-xs btn-warning" %>
+      <%# <%= link_to "Delete this recipe Rails 5", recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure you want to delete?" },class: "btn btn-xs btn-danger" %>  
+      <%= link_to 'Delete this recipe', recipe_path(recipe), data: { "turbo-method": :delete , turbo_confirm: 'Are you sure?'  } ,class: "btn btn-xs btn-danger"%>
+      
+      </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

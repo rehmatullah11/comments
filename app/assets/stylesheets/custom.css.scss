@@ -1,0 +1,91 @@
+$navbar-default-bg: #073b15;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: red;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: url("cover-img.jpg");
+  background-size: cover;
+  height: 340px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.jumbotron h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.btn-xlarge {
+  background-color: #073b15;
+  text-decoration: none;
+  border: none;
+}
+
+.footer-bg {
+  background-color: #e2e2e0;
+}
+
+.description {
+  margin-top: 0;
+}
+
+.well a {
+  color: #073b15;
+}
+
+.chef_info {
+  margin-top: 10px;
+}
+
+.colormatch a {
+  color: #073b15;
+}
+
+.recipe-actions {
+  padding-top: 5px;
+  a {
+    color: #fff;
+  }
+}
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.chef-title {
+  color: #073b15;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.input_checkbox input {
+  width: auto !important;
+}
